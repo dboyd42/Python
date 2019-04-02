@@ -9,7 +9,8 @@ This program simulates a vending machine.
 Features
 =========
 
-	- Set & edit products
-	- Set & edit product prices.
-	- Save files JSON files.
-	- Import JSON files.
+	- Set and edit products.
+	- Set and edit product prices.
+	- Run vending machine simulation as a customer.
+	- Save vending machine data as JSON files.
+	- Import saved JSON files for implementation.
