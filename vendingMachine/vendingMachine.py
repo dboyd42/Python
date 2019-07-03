@@ -1,12 +1,12 @@
 # Program vendingMachine.py
-# Description: 
-# 	Creates and simulates a vending machine.
+# Description:
+#     Creates and simulates a vending machine.
 # Author: David Boyd
 # Date: 9 December 2017
 # Revised:
 #       16 December 2017
 #       15 December 2017
-# 	09 December 2017
+#     09 December 2017
 
 # list libraries used
 import os, json, time
@@ -105,13 +105,13 @@ def main():
 
 # Function IntroMessage
 # Description:
-#	Displays explaination of program
+#    Displays explaination of program
 # Calls:
-#	none
+#    none
 # Parameters:
-#	none
+#    none
 # Returns:
-#	none
+#    none
 
 def IntroMessage():
 
@@ -131,7 +131,7 @@ def IntroMessage():
     print("Enjoy!")
     os.system('pause')
     print()
-    
+
     # Return values
 
 # End IntroMessage() Function
@@ -141,13 +141,13 @@ def IntroMessage():
 #       Asks user which if they want to create a vending machine,
 #       use default vending machine, or Quit program.
 # Calls:
-#	CreateMenu
+#    CreateMenu
 #       Quit
 #       Quit2
 # Parameters:
-#	none
+#    none
 # Returns:
-#	Dictionary vendMach
+#    Dictionary vendMach
 
 def Create_VM_Question():
 
@@ -168,7 +168,7 @@ def Create_VM_Question():
 
     if (ynCreate == 'y') or (ynCreate == 'yes'):
         createQuestion_VM = CreateMenu()
-        
+
     # End if
 
     elif (ynCreate == 'n') or (ynCreate == 'no'):
@@ -181,7 +181,7 @@ def Create_VM_Question():
 
     # End elif
 
-    # Import 
+    # Import
     elif (ynCreate == 'i') or (ynCreate == 'import'):
 
        createQuestion_VM = ImportFile()
@@ -227,15 +227,15 @@ def Create_VM_Question():
 # End Create_VM_Question() function
 
 # Function CreateMenu
-# Description: 
+# Description:
 #       Create dictionary based menu from user input
 #       Dictionary key is of string name and values is an array containing additional data
 # Calls:
-#	none
+#    none
 # Parameters:
-#	none
+#    none
 # Returns:
-#	Dictionary createMenu_VM
+#    Dictionary createMenu_VM
 
 def CreateMenu():
 
@@ -283,7 +283,7 @@ def CreateMenu():
     # Get user vending machine input            // { 'itemMarker' : ['name', float(price), int(qty)] }
     print("Enter '0' in Item name to cancel.")
     for x in range(0, itemAmount):
-        itemMarker = str(x + 1)    
+        itemMarker = str(x + 1)
 
         # Reset validation loops
         escapeValuePrice = 0
@@ -376,13 +376,13 @@ def CreateMenu():
 
 # Function PrettyPrintMenu
 # Description:
-#	Displays vending machine menu
+#    Displays vending machine menu
 # Calls:
-#	
+#
 # Parameters:
-#	print_VM
+#    print_VM
 # Returns:
-#	none
+#    none
 
 def PrettyPrintMenu(print_VM):
 
@@ -409,14 +409,14 @@ def PrettyPrintMenu(print_VM):
 #       Makes purchase
 #       Provides change if necessary
 # Calls:
-#	    CheckMenuItem
+#        CheckMenuItem
 #       CheckUserCancel
 #       PrettyPrintMenu
 #       UpdateMenuQuantity
 # Parameters:
-#	pfMenu_VM
+#    pfMenu_VM
 # Returns:
-#	pfMenu_VM
+#    pfMenu_VM
 
 def PurchaseFromMenu(pfMenu_VM):
 
@@ -432,7 +432,7 @@ def PurchaseFromMenu(pfMenu_VM):
     PrettyPrintMenu(pfMenu_VM)
 
     # Ask user to select purchase
-    itemToPurchase = input("\nPlease enter the ID:[number]\n" 
+    itemToPurchase = input("\nPlease enter the ID:[number]\n"
                            "     Or press '0' to cancel: ")
 
     # Cancel purchase
@@ -512,13 +512,13 @@ def PurchaseFromMenu(pfMenu_VM):
 
 # Function SaveFile
 # Description:
-#	    Create and write the vending machine to a json file
+#        Create and write the vending machine to a json file
 # Calls:
-#	none
+#    none
 # Parameters:
-#	Run_VM
+#    Run_VM
 # Returns:
-#	title
+#    title
 
 def SaveFile(Run_VM):
 
@@ -548,7 +548,7 @@ def SaveFile(Run_VM):
     # Cancel save
     if ((title == 'q') or (title == 'quit') or (title == '0')):
         return
-    
+
     # End if
 
     # ==========JSON WRITE/READ================#
@@ -565,13 +565,13 @@ def SaveFile(Run_VM):
 
 # Function ReadFile
 # Description:
-#	    Displays dictionary from file
+#        Displays dictionary from file
 # Calls:
-#	none
+#    none
 # Parameters:
-#	dictionary dictVM
+#    dictionary dictVM
 # Returns:
-#	none
+#    none
 
 def ReadFile(dictVM):
 
@@ -592,14 +592,14 @@ def ReadFile(dictVM):
 
 # Function ImportFile
 # Description:
-#	    Imports a dictionary '.json' file into prgm
+#        Imports a dictionary '.json' file into prgm
 #       The file is then used as the items in a vending machine
 # Calls:
-#	main()
+#    main()
 # Parameters:
-#	none
+#    none
 # Returns:
-#	dictionary json1_data
+#    dictionary json1_data
 
 
 def ImportFile():
@@ -634,8 +634,8 @@ def ImportFile():
             main()
 
         # End if
-        
-        # try filename validity            
+
+        # try filename validity
         else:
             try:
                 json1_file = open(readFile)
@@ -644,7 +644,7 @@ def ImportFile():
                 print("\nFile imported successfully!")
                 os.system('pause')
                 escapeValue = 1
-                
+
             except Exception:
                 print("\nFile not found.")
                 os.system('pause')
@@ -653,7 +653,7 @@ def ImportFile():
             # End try
 
         # End else
-    
+
     # Return values
     return json1_data
 
@@ -662,13 +662,13 @@ def ImportFile():
 #       Checks if item exists in menu
 #       Then checks if item is in stock
 # Calls:
-#   	CheckMenuItem
+#       CheckMenuItem
 #       PrettyPrintMenu
 # Parameters:
-#	    item
+#        item
 #       chkMenuItm_VM
 # Returns:
-#	    Boolean
+#        Boolean
 
 def CheckMenuItem(item, chkMenuItm_VM):
 
@@ -704,11 +704,11 @@ def CheckMenuItem(item, chkMenuItm_VM):
 # Description:
 #       Checks if user's input is a cancel
 # Calls:
-#	    none
+#        none
 # Parameters:
-#	    userInput
+#        userInput
 # Returns:
-#	    Boolean
+#        Boolean
 
 def CheckUserCancel(userInput):
 
@@ -721,20 +721,20 @@ def CheckUserCancel(userInput):
 
     # Return values
     return False
-    
+
 # End CheckUserCancel() Function
 
 # Function UpdateMenuQuantity
 # Description:
-#	    Update menu item's quantity
+#        Update menu item's quantity
 #       Displays updated vending machine dict
 # Calls:
-#	    PrettyPrintMenu
+#        PrettyPrintMenu
 # Parameters:
-#	    item
+#        item
 #       updateMQ_VM
 # Returns:
-#   	none
+#       none
 
 def UpdateMenuQuantity(item, updateMQ_VM):
 
@@ -750,14 +750,14 @@ def UpdateMenuQuantity(item, updateMQ_VM):
 
 # Function Quit
 # Description:
-#	    Exit option menu:
+#        Exit option menu:
 #       continue, save, restart, or quit prgm
 # Calls:
-#   	main
+#       main
 # Parameters:
-    #	Run_VM
+    #    Run_VM
 # Returns:
-#	none
+#    none
 
 def Quit(Run_VM):
 
@@ -825,14 +825,14 @@ def Quit(Run_VM):
 
 # Function Quit2
 # Description:
-#	    Exit option menu with no option to save files
+#        Exit option menu with no option to save files
 # Calls:
-#   	main
+#       main
 #       exit
 # Parameters:
 #       none
 # Returns:
-#	    none
+#        none
 
 def Quit2():
 
@@ -846,7 +846,7 @@ def Quit2():
     print("Enter: 'r' || Restart! I want to restart the program.\n" \
           "Enter: 'q' || Quit! I want to quit the program.\n")
 
-    # while validation -> invalid response 
+    # while validation -> invalid response
     while escapeValue == 0:
 
         # Ask user for selection
@@ -875,7 +875,7 @@ def Quit2():
         # End else
 
     # End while
-    
+
     # Return values
 
 # End Quit2() Function
