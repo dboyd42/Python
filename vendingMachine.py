@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Program vendingMachine.py
 # Description:
 #     Creates and simulates a vending machine.
@@ -6,17 +8,24 @@
 # Revised:
 #       16 December 2017
 #       15 December 2017
-#     09 December 2017
-
+#       09 December 2017
+#
 # list libraries used
 import os, json, time
 
 # Declare global constants
 
-DEF_VEND_MACH = {'1': ['Snickers', 2.25, 1], '2': ['PopTarts', 1.50, 3], '3': ['A Russian Wife', 2.25, 5],
-                 '4': ['CupCakes', 2.25, 7], '5': ['M&Ms', 1.75, 0], '6': ['Skittles', 1.25, 10],
-                 '7': ['Funyuns', 2.00, 10], '8': ['Shoelaces', 2.00, 10], '9': ['Hersheys', 2.25, 10],
-                 '10': ['Boogers', 59.95, 10] }
+DEF_VEND_MACH = {
+        '1': ['Snickers', 2.25, 1],
+        '2': ['PopTarts', 1.50, 3],
+        '3': ['A Russian Wife', 2.25, 5],
+        '4': ['CupCakes', 2.25, 7],
+        '5': ['M&Ms', 1.75, 0],
+        '6': ['Skittles', 1.25, 10],
+        '7': ['Funyuns', 2.00, 10],
+        '8': ['Shoelaces', 2.00, 10],
+        '9': ['Hersheys', 2.25, 10],
+        '10': ['Boogers', 59.95, 10] }
 
 
 ##########
@@ -48,7 +57,7 @@ def main():
         # Ask user selection
         menuChoice = input("What would you like to do? ").lower()
         while ((menuChoice != '1') and (menuChoice != '2') and (menuChoice != '3') \
-               and (menuChoice != '4') and (menuChoice != 'q') and (menuChoice != 'quit')):
+                and (menuChoice != '4') and (menuChoice != 'q') and (menuChoice != 'quit')):
             print("Not a valid entry, please try again.")
             menuChoice = input("What would you like to do? ").lower()
 
@@ -74,28 +83,28 @@ def main():
             PurchaseFromMenu(Run_VM)
             run = Menu()
 
-        # End elif
+            # End elif
 
-        # Save file
+            # Save file
         elif run == '3':
             venFile = SaveFile(Run_VM)
             run = Menu()
 
-        # End elif
+            # End elif
 
-        # Display from file
+            # Display from file
         elif run == '4':
             ReadFile(Run_VM)
             run = Menu()
 
-        # End elif
+            # End elif
 
-        # Quit prgm
+            # Quit prgm
         elif run == 'q' or run == 'quit':
             Quit(Run_VM)
             run = Menu()
 
-        # End elif
+            # End elif
 
     # End Menu() Function
 
@@ -120,14 +129,14 @@ def IntroMessage():
     # Dispaly program message
     os.system('cls')
     print("“Make $500 an Hour in the Vending Business!”\n"\
-          "“Earn Money While You Sleep in a Vending Machine Business!”\n")
+            "“Earn Money While You Sleep in a Vending Machine Business!”\n")
     os.system('pause')
 
     print()
     print("This program allows users to to store files saved as '.json' files in which they can\n" \
-          "later edit in other 3rd party text editing programs, such as textedit and notepad.\n")
+            "later edit in other 3rd party text editing programs, such as textedit and notepad.\n")
     print("These files then can be simulated through a vending machine by the user playing the customer.\n" \
-          "The program will allow the customer to make purchases through credit and reduce stock accordingly.\n")
+            "The program will allow the customer to make purchases through credit and reduce stock accordingly.\n")
     print("Enjoy!")
     os.system('pause')
     print()
@@ -160,9 +169,9 @@ def Create_VM_Question():
     # Ask user for type of vending machine
     print("Do you want to create your own vending machine?")
     print("Enter: 'y' || Yes! I want to create my own vending machine.\n" \
-          "Enter: 'i' || Import! I want to import my vending machine.\n" \
-          "Enter: 'n' || No! I want to use the preloaded vending machine.\n" \
-          "Enter: 'q' || Quit! I want to quit the program.\n")
+            "Enter: 'i' || Import! I want to import my vending machine.\n" \
+            "Enter: 'n' || No! I want to use the preloaded vending machine.\n" \
+            "Enter: 'q' || Quit! I want to quit the program.\n")
 
     ynCreate = input("Enter [y/i/n/q]: ").lower()
 
@@ -174,27 +183,27 @@ def Create_VM_Question():
     elif (ynCreate == 'n') or (ynCreate == 'no'):
         createQuestion_VM = DEF_VEND_MACH
 
-    # End elif
+        # End elif
 
     elif (ynCreate == 'q') or (ynCreate == 'Quit'):
         Quit2()
 
-    # End elif
+        # End elif
 
-    # Import
+        # Import
     elif (ynCreate == 'i') or (ynCreate == 'import'):
 
-       createQuestion_VM = ImportFile()
+        createQuestion_VM = ImportFile()
 
-    # End elif
+        # End elif
 
     # yNCreate while validation
     while (ynCreate != 'y') and (ynCreate != 'yes') and (ynCreate != 'n') and (ynCreate != 'no') and (ynCreate != 'q') and (ynCreate != 'Quit')and (ynCreate != 'i'and (ynCreate != 'import')):
         print("Not a valid entry.")
         print("Enter: 'y' || Yes! I want to create my own vending machine.\n" \
-              "Enter: 'i' || Import! I want to import my vending machine.\n" \
-              "Enter: 'n' || No! I want to use the preloaded vending machine.\n" \
-              "Enter: 'q' || Quit! I want to quit the program.\n")
+                "Enter: 'i' || Import! I want to import my vending machine.\n" \
+                "Enter: 'n' || No! I want to use the preloaded vending machine.\n" \
+                "Enter: 'q' || Quit! I want to quit the program.\n")
 
         ynCreate = input("Enter [y/i/n/q]: ").lower()
 
@@ -206,19 +215,19 @@ def Create_VM_Question():
         elif (ynCreate == 'n') or (ynCreate == 'no'):
             createQuestion_VM = DEF_VEND_MACH
 
-        # End elif
+            # End elif
 
         elif (ynCreate == 'q') or (ynCreate == 'quit'):
             Quit2()
 
-        # End elif
+            # End elif
 
-        # IMPORT FILE
+            # IMPORT FILE
         elif (ynCreate == 'i') or (ynCreate == 'import'):
 
-           creatQuestion_VM = ImportFile()
+            creatQuestion_VM = ImportFile()
 
-        # End elif
+            # End elif
 
     print()
 
@@ -270,9 +279,9 @@ def CreateMenu():
 
         # End if
 
-        else:
-            escapeValueItemAmt = 1
-            print()
+    else:
+        escapeValueItemAmt = 1
+        print()
 
         # End else
 
@@ -329,9 +338,9 @@ def CreateMenu():
 
             # End if
 
-            else:
-                tempItemPrice = format(tempItemPrice,',.2f')
-                escapeValuePrice = 1
+        else:
+            tempItemPrice = format(tempItemPrice,',.2f')
+            escapeValuePrice = 1
 
             # End else
 
@@ -356,8 +365,8 @@ def CreateMenu():
 
             # End if
 
-            else:
-                escapeValueQty = 1
+        else:
+            escapeValueQty = 1
 
             # End else
             # End try
@@ -433,7 +442,7 @@ def PurchaseFromMenu(pfMenu_VM):
 
     # Ask user to select purchase
     itemToPurchase = input("\nPlease enter the ID:[number]\n"
-                           "     Or press '0' to cancel: ")
+            "     Or press '0' to cancel: ")
 
     # Cancel purchase
     if itemToPurchase == '0':
@@ -442,7 +451,7 @@ def PurchaseFromMenu(pfMenu_VM):
         print("Canceled by user.\n")
         os.system('pause')
 
-    # End if
+        # End if
 
     # Ready to make purchase
     elif (CheckMenuItem(itemToPurchase, pfMenu_VM)):
@@ -492,10 +501,10 @@ def PurchaseFromMenu(pfMenu_VM):
                 os.system('cls')
                 escapeValueItemPrice = 1
 
-            # End elif
+                # End elif
 
-            else:
-                escapeValueItemPrice = 1
+        else:
+            escapeValueItemPrice = 1
 
             # End else
 
@@ -535,15 +544,15 @@ def SaveFile(Run_VM):
 
     # Ask for filename
     title = input("Enter name of file\n" \
-                  "(Or press '0' to cancel): ")
+            "(Or press '0' to cancel): ")
 
     # Catch invalid filename
     while (len(title) <= 0):
         print("\nNot a valid entry.\n")
         title = input("Enter name of file\n" \
-                      "(Or press '0' to cancel): ")
+                "(Or press '0' to cancel): ")
 
-    # End while
+        # End while
 
     # Cancel save
     if ((title == 'q') or (title == 'quit') or (title == '0')):
@@ -636,19 +645,18 @@ def ImportFile():
         # End if
 
         # try filename validity
-        else:
-            try:
-                json1_file = open(readFile)
-                json1_str = json1_file.read()
-                json1_data = json.loads(json1_str)
-                print("\nFile imported successfully!")
-                os.system('pause')
-                escapeValue = 1
+    else:
+        try:
+            json1_file = open(readFile)
+            json1_str = json1_file.read()
+            json1_data = json.loads(json1_str)
+            print("\nFile imported successfully!")
+            os.system('pause')
+            escapeValue = 1
 
-            except Exception:
-                print("\nFile not found.")
-                os.system('pause')
-                continue
+        except Exception:
+            print("\nFile not found.")
+            os.system('pause')
 
             # End try
 
@@ -686,7 +694,7 @@ def CheckMenuItem(item, chkMenuItm_VM):
             print(chkMenuItm_VM[item][0] + " is out of stock.\n")
             os.system('pause')
 
-        # End else
+            # End else
 
     else:
         PrettyPrintMenu(chkMenuItm_VM)
@@ -768,9 +776,9 @@ def Quit(Run_VM):
     os.system('cls')
     print("Sorry to see you go!")
     print("Enter: 'c' || Continue! I want to continue the program.\n"
-          "Enter: 's' || Save! I want to save my vending machine.\n"
-          "Enter: 'r' || Restart! I want to restart the program.\n"
-          "Enter: 'q' || Quit! I want to quit the program.\n")
+            "Enter: 's' || Save! I want to save my vending machine.\n"
+            "Enter: 'r' || Restart! I want to restart the program.\n"
+            "Enter: 'q' || Quit! I want to quit the program.\n")
 
     # Ask for user option
     yN = input("Enter [c/s/r/q]: ").lower()
@@ -794,7 +802,7 @@ def Quit(Run_VM):
         # End elif
 
         # Restart prgm
-        elif yN == 'r' or yN == 'restart':
+        elif (yN == 'r' or yN == 'restart'):
             print()
             print("Restarting program...")
             os.system('pause')
@@ -844,7 +852,7 @@ def Quit2():
     os.system('cls')
     print("Are you sure you want to quit?!")
     print("Enter: 'r' || Restart! I want to restart the program.\n" \
-          "Enter: 'q' || Quit! I want to quit the program.\n")
+            "Enter: 'q' || Quit! I want to quit the program.\n")
 
     # while validation -> invalid response
     while escapeValue == 0:
