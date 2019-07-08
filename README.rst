@@ -1,14 +1,16 @@
-Python Programs
+Vending Machine
 ################
 :Author: David Boyd
-:Purpose: This repository holds Python programs that I've written.
+:Term: 2017/12
+:Status: COMPLETE
 
-Contents
+This program simulates a vending machine.
+
+Features
 =========
 
-+---------------------+-------------+---------+
-| Program Name        | Progress    | Date    |
-+=====================+=============+=========+
-| Vending Machine     | Completed   | 2017/12 |
-+---------------------+-------------+---------+
-
+	- Set and edit products.
+	- Set and edit product prices.
+	- Run vending machine simulation as a customer.
+	- Save vending machine data as JSON files.
+	- Import saved JSON files for implementation.
